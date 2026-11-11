@@ -1,0 +1,271 @@
+.product-story-section {
+  position: relative;
+  min-height: 180vh;
+  background:
+    radial-gradient(ellipse at 50% 45%, rgba(171, 31, 38, 0.12), transparent 44%),
+    var(--bg-site);
+  color: var(--text-site);
+}
+
+.product-journey-transfer {
+  position: fixed;
+  top: 0;
+  z-index: 20;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  will-change: left, opacity, transform;
+}
+
+.product-journey-transfer img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  user-select: none;
+}
+
+.product-story-stage {
+  position: sticky;
+  top: 76px;
+  height: calc(100vh - 76px);
+  min-height: 620px;
+  max-width: 1440px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.product-story-heading {
+  position: absolute;
+  top: clamp(1.25rem, 3vh, 2.2rem);
+  left: 50%;
+  z-index: 3;
+  width: min(90%, 600px);
+  text-align: center;
+  transform: translateX(-50%);
+}
+
+.product-story-eyebrow,
+.product-story-feature-label {
+  color: var(--color-red);
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+}
+
+.product-story-heading h2 {
+  margin-top: 0.45rem;
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 4.8vw, 4.5rem);
+  font-weight: 400;
+  letter-spacing: 0.025em;
+  line-height: 0.98;
+  text-transform: uppercase;
+}
+
+.product-story-heading p {
+  margin-top: 0.55rem;
+  color: var(--color-gray-subtle);
+  font-size: clamp(0.82rem, 1.1vw, 0.98rem);
+}
+
+.product-story-product {
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  width: min(46vw, 620px);
+  height: 72%;
+  transform: translateX(-50%);
+}
+
+.product-story-product::before {
+  position: absolute;
+  inset: 12% 8%;
+  border: 1px solid rgba(255, 255, 255, 0.055);
+  border-radius: 50%;
+  content: '';
+}
+
+.product-story-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  user-select: none;
+  will-change: opacity, transform;
+}
+
+.product-story-image-front {
+  z-index: 1;
+}
+
+.product-story-image-back {
+  z-index: 2;
+}
+
+.product-story-features {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.product-story-feature {
+  position: absolute;
+  width: clamp(190px, 21vw, 270px);
+  padding: 0.5rem 0;
+}
+
+.product-story-feature-left {
+  left: clamp(1.5rem, 7vw, 7rem);
+  text-align: left;
+}
+
+.product-story-feature-right {
+  right: clamp(1.5rem, 7vw, 7rem);
+  text-align: right;
+}
+
+.product-story-feature:nth-child(1) {
+  top: 33%;
+}
+
+.product-story-feature:nth-child(2) {
+  top: 34%;
+}
+
+.product-story-feature:nth-child(3) {
+  top: 63%;
+}
+
+.product-story-feature:nth-child(4) {
+  top: 64%;
+}
+
+.product-story-feature h3 {
+  margin-top: 0.35rem;
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 1.35vw, 1.18rem);
+  line-height: 1.25;
+}
+
+.product-story-feature p {
+  margin-top: 0.45rem;
+  color: var(--color-gray-subtle);
+  font-size: 0.75rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 900px) {
+  .product-story-section {
+    min-height: 155vh;
+  }
+
+  .product-story-stage {
+    min-height: 560px;
+  }
+
+  .product-story-product {
+    top: 18%;
+    width: min(50vw, 490px);
+    height: 72%;
+  }
+
+  .product-story-feature {
+    width: clamp(168px, 24vw, 220px);
+    padding: 0.5rem 0;
+  }
+
+  .product-story-feature-left {
+    left: 1.5rem;
+  }
+
+  .product-story-feature-right {
+    right: 1.5rem;
+  }
+
+  .product-story-feature p {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .product-story-section {
+    min-height: 0;
+    padding: 3.5rem 1.25rem 4rem;
+  }
+
+  .product-story-stage {
+    position: relative;
+    top: auto;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+
+  .product-story-heading {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    margin: 0 auto 1.25rem;
+    transform: none;
+  }
+
+  .product-story-heading h2 {
+    font-size: clamp(2.7rem, 13vw, 4rem);
+  }
+
+  .product-story-product {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: min(100%, 430px);
+    height: min(105vw, 430px);
+    margin: 0 auto 1.5rem;
+    transform: none;
+  }
+
+  .product-story-product::before {
+    inset: 10%;
+  }
+
+  .product-story-features {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
+  }
+
+  .product-story-feature,
+  .product-story-feature-left,
+  .product-story-feature-right,
+  .product-story-feature:nth-child(n) {
+    position: relative;
+    inset: auto;
+    width: auto;
+    min-height: 150px;
+    padding: 1rem;
+    text-align: left;
+  }
+
+  .product-story-feature-label {
+    font-size: 0.58rem;
+    letter-spacing: 0.13em;
+  }
+
+  .product-story-feature h3 {
+    font-size: 0.95rem;
+  }
+
+  .product-story-feature p {
+    font-size: 0.68rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .product-story-image {
+    will-change: auto;
+  }
+}

@@ -1,0 +1,77 @@
+.landing-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-site);
+  color: var(--text-site);
+  overflow-x: clip;
+}
+
+.landing-body-content {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.landing-hero-placeholder {
+  min-height: calc(100vh - 76px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 1.5rem;
+  gap: 1.5rem;
+  background: radial-gradient(circle at 50% 30%, rgba(255, 30, 39, 0.08) 0%, transparent 65%);
+}
+
+.hero-status-tag {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.25em;
+  color: var(--color-red);
+  text-transform: uppercase;
+  background-color: rgba(255, 30, 39, 0.12);
+  border: 1px solid rgba(255, 30, 39, 0.3);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-full);
+}
+
+.hero-placeholder-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  color: var(--color-white);
+  line-height: 1.05;
+}
+
+.title-red-dot {
+  font-family: var(--font-telugu);
+  color: var(--color-red);
+  font-size: 0.65em;
+  margin-left: 0.5rem;
+  text-shadow: 0 0 20px rgba(255, 30, 39, 0.6);
+}
+
+.hero-placeholder-desc {
+  font-size: 1.2rem;
+  color: var(--color-gray-subtle);
+  max-width: 580px;
+  line-height: 1.6;
+}
+
+.section-waiting-banner {
+  margin-top: 1.5rem;
+  padding: 0.85rem 1.5rem;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-md);
+  color: var(--color-white);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
