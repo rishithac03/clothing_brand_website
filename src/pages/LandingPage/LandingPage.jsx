@@ -4,7 +4,8 @@ import './LandingPage.css';
 import Navbar from '../../sections/Navbar/Navbar';
 import Hero from '../../sections/Hero/Hero';
 import ProductStory from '../../sections/ProductStory/ProductStory';
-import { brandConfig, navbarData, data, productStoryData } from '../../data/landingData';
+import CollectionsSlider from '../../sections/CollectionsSlider/CollectionsSlider';
+import { brandConfig, navbarData, data, productStoryData, collectionsData } from '../../data/landingData';
 
 /**
  * Main Landing Page Component
@@ -15,8 +16,10 @@ const LandingPage = () => {
   const heroVisualRef = useRef(null);
   const storyRef = useRef(null);
   const storyProductRef = useRef(null);
+  const collectionsRef = useRef(null);
   const prefersReducedMotion = useReducedMotion();
   const [heroModelBounds, setHeroModelBounds] = useState(null);
+  const [collectionSliderPos, setCollectionSliderPos] = useState(50);
   const [transferPath, setTransferPath] = useState({
     startX: null,
     startY: null,
@@ -116,20 +119,37 @@ const LandingPage = () => {
     };
   }, [heroModelBounds]);
 
+  const handleNavClick = (link) => {
+    if (link.id === 'men') {
+      setCollectionSliderPos(80);
+      collectionsRef.current?.scrollIntoView({ behavior: 'smooth' });
+    } else if (link.id === 'women' || link.id === 'kids') {
+      setCollectionSliderPos(20);
+      collectionsRef.current?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      collectionsRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleHeroPrimaryAction = () => {
+    setCollectionSliderPos(50);
+    collectionsRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="landing-page">
       {/* 1. Header & Navigation Bar */}
       <Navbar
         brand={brandConfig}
         data={navbarData}
-        onNavClick={(link) => console.log('Navigated to:', link)}
+        onNavClick={handleNavClick}
         onSearch={(query) => console.log('Search query:', query)}
       />
 
       {/* 2. Hero Section with 3D Animated T-Shirt */}
       <Hero
         data={data}
-        onPrimaryAction={() => console.log('Primary CTA clicked')}
+        onPrimaryAction={handleHeroPrimaryAction}
         sectionRef={heroRef}
         visualRef={heroVisualRef}
         productOpacity={prefersReducedMotion ? 1 : heroProductOpacity}
@@ -141,6 +161,20 @@ const LandingPage = () => {
         data={productStoryData}
         sectionRef={storyRef}
         productRef={storyProductRef}
+      />
+
+      {/* 4. Unique Interactive Split Slit Slider: Men vs Women Collections */}
+      <CollectionsSlider
+        data={collectionsData}
+        sectionRef={collectionsRef}
+        sliderPosition={collectionSliderPos}
+        onSliderChange={setCollectionSliderPos}
+        onExploreMen={() => {
+          setCollectionSliderPos(80);
+        }}
+        onExploreWomen={() => {
+          setCollectionSliderPos(20);
+        }}
       />
 
       {!prefersReducedMotion && (

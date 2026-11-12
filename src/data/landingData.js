@@ -5,20 +5,20 @@
  */
 
 export const brandConfig = {
-  name: "MAAYA",
-  teluguName: "మాయ",
+  name: "MAయ",
+  teluguName: "originals",
   subTagline: "STREETWEAR CULT",
   tagline: "Raw Telugu Streetwear Cultured in Black, Red & White",
   logo: {
-    text: "MAAYA",
+    text: "MAYA",
     teluguSubtext: "మాయ",
   }
 };
 
 export const navbarData = {
   navLinks: [
-    { id: "men", label: "Men", teluguLabel: "పురుషులు", href: "#men", badge: "NEW" },
-    { id: "women", label: "Women", teluguLabel: "మహిళలు", href: "#women" },
+    { id: "Men", label: "Hero", teluguLabel: "పురుషులు", href: "#men", badge: "NEW" },
+    { id: "Women", label: "Heroine", teluguLabel: "మహిళలు", href: "#women" },
     { id: "kids", label: "Kids", teluguLabel: "పిల్లలు", href: "#kids" },
   ],
   search: {
@@ -51,7 +51,7 @@ export const data = {
   actions: {
     primary: {
       label: "EXPLORE COLLECTION",
-      href: "#shop-now"
+      href: "#collections-section"
     }
   }
 };
@@ -94,9 +94,33 @@ export const productStoryData = {
   ],
 };
 
+export const collectionsData = {
+  id: "collections-section",
+  title: "Explore Categories",
+  women: {
+    id: "women",
+    image: "/images/Women_Collection.png",
+    imageAlt: "MAAYA Women and Kids Streetwear Collection",
+    action: {
+      label: "EXPLORE WOMEN & KIDS COLLECTION",
+      href: "#women",
+    },
+  },
+  men: {
+    id: "men",
+    image: "/images/Men_Collection.png",
+    imageAlt: "MAAYA Men Streetwear Collection",
+    action: {
+      label: "EXPLORE MEN COLLECTION",
+      href: "#men",
+    },
+  },
+};
+
 export const landingData = {
   brand: brandConfig,
   navbar: navbarData,
   hero: data,
   productStory: productStoryData,
+  collections: collectionsData,
 };
