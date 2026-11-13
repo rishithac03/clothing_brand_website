@@ -5,7 +5,8 @@ import Navbar from '../../sections/Navbar/Navbar';
 import Hero from '../../sections/Hero/Hero';
 import ProductStory from '../../sections/ProductStory/ProductStory';
 import CollectionsSlider from '../../sections/CollectionsSlider/CollectionsSlider';
-import { brandConfig, navbarData, data, productStoryData, collectionsData } from '../../data/landingData';
+import ProductRailGallery from '../../sections/ProductRailGallery/ProductRailGallery';
+import { brandConfig, navbarData, data, productStoryData, collectionsData, productRailData } from '../../data/landingData';
 
 /**
  * Main Landing Page Component
@@ -176,6 +177,9 @@ const LandingPage = () => {
           setCollectionSliderPos(20);
         }}
       />
+
+      {/* 5. Interactive Streetwear Product Rail Gallery (Oversized, Sweatshirts, Sleeveless) */}
+      <ProductRailGallery data={productRailData} />
 
       {!prefersReducedMotion && (
         <motion.div

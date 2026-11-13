@@ -15,7 +15,7 @@ import './TShirt3D.css';
  * - Zero clutter: no front/back buttons
  */
 const TShirt3D = ({
-  modelPath = '/models/maaya_red_tshirt_front_back.glb',
+  modelPath = '/models/Maaya_TShirt_Blend_Slim.glb',
   autoRotateSpeed = 1.4,
   onModelBounds,
 }) => {
